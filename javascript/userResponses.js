@@ -7,10 +7,13 @@
 
  class UserResponse {
 
-     constructor(name, school, currentYear, isYesResponse) {
-        this.name = name
-        this.school = school
+     constructor(firstName, lastName, currentYear, major, email, password, isYesResponse) {
+        this.firstName = firstName
+        this.lastName = lastName
         this.currentYear = currentYear
+        this.major = major
+        this.email = email
+        this.password = password
          
          if (isYesResponse) {
             let _yesResponses = {
@@ -25,7 +28,7 @@
          }
      }
     getName() {
-        console.log(this.name)
+        console.log(this.firstName)
      }
     injectYesResponse(){
         this._yesResponses[0].yq1 = "fuck this app lmao"
@@ -34,17 +37,41 @@
         console.log(this._yesResponses[index].yq1)
      }
  }
+ // GLOBAL EMPTY NEW USER OBJ
+ var newUserResponse = new UserResponse(null, null, null, null, null, null, null)
+
+ // Handle signIn.html user response
+ // Pass UserResponse object into yes/no response objects
+ // pass that data into mongoDB
+ function signInUser() {
+     const firstName = document.getElementsByName("firstName")
+     const lastName = document.getElementsByName("lastName")
+     const email = document.getElementsByName("email")
+     const pass = document.getElementsByName("password")
+     const major = document.getElementsByName("major")
+     const schoolYear = document.getElementsByName("schoolYear")
+     // pass the values into UserResponse object
+    newUserResponse.firstName = firstName
+    newUserResponse.lastName = lastName
+    newUserResponse.schoolYear = schoolYear
+    newUserResponse.major = major
+    newUserResponse.email = email
+    newUserResponse.password = pass
+    newUserResponse.isYesResponse = false
+ }
 
  // Now let's display the correct page depending on button response
  function yesChoice() {
-     const userChoice = document.getElementById('ideator')
-     console.log('user choice made')
+     // set isYesResponse to true
+     newUserResponse.isYesResponse = true
+
      // now we move the user to the appropriate page
      window.location.href = "yes/preQ.html"
-
  }
  function noChoice() {
-     console.log('user choice made')
      window.location.href = "no/preQ.html"
  }
-let user1 = new UserResponse("henG", "UCSD", "4th", true)
+
+
+
+
