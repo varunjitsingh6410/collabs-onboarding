@@ -8,37 +8,43 @@
  class UserResponse {
 
      constructor(name, school, currentYear, isYesResponse) {
-         this.name = name
-         this.school = school
-         this.currentYear = currentYear
-         // 
+        this.name = name
+        this.school = school
+        this.currentYear = currentYear
+         
          if (isYesResponse) {
-             let _yesResponses = {
+            let _yesResponses = {
                 0: { yq1: "" }
             }
             this._yesResponses = _yesResponses
          } else {
             _noReponses = {
                 0: { nq1: "" }
-            }
+            } 
             this._noReponses = _noReponses
          }
      }
-     getName() {
-         console.log(this.name)
+    getName() {
+        console.log(this.name)
      }
-     injectYesResponse(){
-         this._yesResponses[0].yq1 = "fuck this app lmao"
+    injectYesResponse(){
+        this._yesResponses[0].yq1 = "fuck this app lmao"
      }
-     getYesResponseAt(index) {
-         console.log(this._yesResponses[index].yq1)
+    getYesResponseAt(index) {
+        console.log(this._yesResponses[index].yq1)
      }
  }
 
- // lets test and play around w the class above
+ // Now let's display the correct page depending on button response
+ function yesChoice() {
+     const userChoice = document.getElementById('ideator')
+     console.log('user choice made')
+     // now we move the user to the appropriate page
+     window.location.href = "yes/preQ.html"
+
+ }
+ function noChoice() {
+     console.log('user choice made')
+     window.location.href = "no/preQ.html"
+ }
 let user1 = new UserResponse("henG", "UCSD", "4th", true)
-console.log("injecting response...")
-user1.injectYesResponse()
-console.log("Getting username...")
-user1.getName()
-user1.getYesResponseAt(0)
