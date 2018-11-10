@@ -7,3 +7,7 @@ MongoClient.connect(url, function(err, db) {
   db.close();
 });
 
+
+function buttonClicked (){
+	console.log("I was clicked");
+}
