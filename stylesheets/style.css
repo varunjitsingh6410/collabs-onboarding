@@ -73,3 +73,33 @@ br {
     text-decoration: none;
     color: black;
 }
+
+.heading {
+  font-family: 'EquitanSans';
+  line-height: 400px;
+  height: 200px;
+  text-align: center;
+}
+
+.selectContainer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  align-content: center;
+  
+}
+
+.selectImg {
+  display: inline-block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width:300px;
+  height: auto;
+}
+
+#images{
+  text-align:center;
+}

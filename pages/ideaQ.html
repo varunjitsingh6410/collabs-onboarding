@@ -10,13 +10,23 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+
  
 
 </head>
 <body>
-	<h1>First off, how do you want to change the world?</h1>
-	<button class="ideabtn" id="ideator" onclick="yesChoice()">I have an idea</button>
+	<div class="heading">
+		<h1 class="heading">First off, how do you want to change the world?</h1>
+		<div id="images">
+			<a href="yes/preQ.html">
+				<img class="selectImg" src="../assets/idea.png"/>
+			</a>
+			<a href="no/preQ.html">
+				<img class="selectImg" src="../assets/invent.png">
+			</a>
+		</div>
+	</div>
 
-	<button class="inventorbtn" id="inventor" onclick="noChoice()" window.location.href='no/preQ.html'">I want to invent new ideas</button>
 </body>
 </html>
