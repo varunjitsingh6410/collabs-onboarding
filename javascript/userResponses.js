@@ -14,6 +14,7 @@
         this.major = major
         this.email = email
         this.password = password
+        this.isYesResponse = isYesResponse
          
          if (isYesResponse) {
             let _yesResponses = {
@@ -21,7 +22,7 @@
             }
             this._yesResponses = _yesResponses
          } else {
-            _noReponses = {
+            let _noReponses = {
                 0: { nq1: "" }
             } 
             this._noReponses = _noReponses
@@ -44,12 +45,12 @@
  // Pass UserResponse object into yes/no response objects
  // pass that data into mongoDB
  function signInUser() {
-     const firstName = document.getElementsByName("firstName")
-     const lastName = document.getElementsByName("lastName")
-     const email = document.getElementsByName("email")
-     const pass = document.getElementsByName("password")
-     const major = document.getElementsByName("major")
-     const schoolYear = document.getElementsByName("schoolYear")
+     const firstName = document.getElementById("")
+     const lastName = document.getElementById("lastName")
+     const email = document.getElementById("email")
+     const pass = document.getElementById("password")
+     const major = document.getElementById("major")
+     const schoolYear = document.getElementById("schoolYear")
      // pass the values into UserResponse object
     newUserResponse.firstName = firstName
     newUserResponse.lastName = lastName
@@ -58,6 +59,8 @@
     newUserResponse.email = email
     newUserResponse.password = pass
     newUserResponse.isYesResponse = false
+    console.log(newUserResponse.firstName)
+    //window.location.href = "ideaQ.html"
  }
 
  // Now let's display the correct page depending on button response
@@ -71,6 +74,11 @@
  function noChoice() {
      window.location.href = "no/preQ.html"
  }
+
+ // tests
+ console.log("INIT TESTS")
+ console.log(newUserResponse.firstName)
+ console.log(newUserResponse.isYesResponse)
 
 
 
