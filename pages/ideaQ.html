@@ -5,24 +5,19 @@
 	<!--
 	<script type="text/javascript" src="javascript/app.js"></script>
 	-->
-	<script type="text/javascript" src="javascript/userResponses.js"></script>
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../javascript/userResponses.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  			crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../stylesheets/style.css">
-
- 
-
 </head>
 <body>
 	<div class="heading">
 		<h1 class="heading">First off, how do you want to change the world?</h1>
 		<div id="images">
-			<a href="yes/preQ.html">
+			<a href="yes/preQ.html" onclick="handleUserTrackResponse()" id="yes">
 				<img class="selectImg" src="../assets/idea.png"/>
 			</a>
-			<a href="no/preQ.html">
+			<a href="no/preQ.html" onclick="handleUserTrackResponse()" id="no">
 				<img class="selectImg" src="../assets/invent.png">
 			</a>
 		</div>

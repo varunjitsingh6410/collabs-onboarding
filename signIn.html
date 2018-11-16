@@ -20,38 +20,29 @@
         <form>
         <div class="input-container">
             <i class="fa fa-user icon"></i>
-            <input class="input-field" type="text" placeholder="Name" name="username">
+            <input class="input-field" type="text" placeholder="Name" name="username" id="name">
         </div>
         
         <div class="input-container">
             <i class="fa fa-envelope icon"></i>
-            <input class="input-field" type="text" placeholder="UCSD Email" name="email">
+            <input class="input-field" type="text" placeholder="UCSD Email" name="email" id="email">
         </div>
-            <input type="text" id="firstName" value="first name"> 
-            <input type="text" id="lastName" value="last name">
-            <input type="text" id="email" value="email">
-            <input type="text" id="password" value="password">
-            <input type="text" id="major" value="major">
-            <input type="text" id="schoolYear" value="year in school">
-            <button id="sign-up-button" onclick="signInUser()">Sign Up</button>
-        </form>
         
         <div class="input-container">
             <i class="fa fa-key icon"></i>
-            <input class="input-field" type="password" placeholder="Password" name="pass">
+            <input class="input-field" type="password" placeholder="Password" name="pass" id="password">
         </div>
 
         <div class="input-container">
             <i class="fa fa-key icon"></i>
-            <input class="input-field" type="text" placeholder="Major" name="major">
+            <input class="input-field" type="text" placeholder="Major" name="major" id="major">
         </div>
 
         <div class="input-container">
             <i class="fa fa-key icon"></i>
-            <input class="input-field" type="text" placeholder="Year in school" name="standing">
+            <input class="input-field" type="text" placeholder="Year in school" name="standing" id="schoolYear">
         </div>
-        <!-- <button id="sign-up-button" onclick="signInUser()">Sign Up</button> -->
-        <a class="sign-up-button" href="pages/ideaQ.html">Sign Up</a>
+        <a class="sign-up-button" onclick="signInUser()" >Sign Up</a>
         </form>
     </div>
 </body>

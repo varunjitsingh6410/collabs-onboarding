@@ -7,9 +7,8 @@
 
  class UserResponse {
 
-     constructor(firstName, lastName, currentYear, major, email, password, isYesResponse) {
-        this.firstName = firstName
-        this.lastName = lastName
+     constructor(name, email, password, major, currentYear, isYesResponse) {
+        this.name = name
         this.currentYear = currentYear
         this.major = major
         this.email = email
@@ -28,8 +27,11 @@
             this._noReponses = _noReponses
          }
      }
-    getName() {
-        console.log(this.firstName)
+    getValues() {
+        console.log("dumping raw values of this obj....")
+        console.log(this.name)
+        console.log(this.email)
+        console.log(this.major)
      }
     injectYesResponse(){
         this._yesResponses[0].yq1 = "fuck this app lmao"
@@ -38,30 +40,29 @@
         console.log(this._yesResponses[index].yq1)
      }
  }
- // GLOBAL EMPTY NEW USER OBJ
- var newUserResponse = new UserResponse(null, null, null, null, null, null, null)
 
  // Handle signIn.html user response
  // Pass UserResponse object into yes/no response objects
  // pass that data into mongoDB
  function signInUser() {
-     const firstName = document.getElementById("")
-     const lastName = document.getElementById("lastName")
-     const email = document.getElementById("email")
-     const pass = document.getElementById("password")
-     const major = document.getElementById("major")
-     const schoolYear = document.getElementById("schoolYear")
+     const name = document.getElementById("name").value
+     const email = document.getElementById("email").value
+     const pass = document.getElementById("password").value
+     const major = document.getElementById("major").value
+     const schoolYear = document.getElementById("schoolYear").value
      // pass the values into UserResponse object
-    newUserResponse.firstName = firstName
-    newUserResponse.lastName = lastName
-    newUserResponse.schoolYear = schoolYear
-    newUserResponse.major = major
-    newUserResponse.email = email
-    newUserResponse.password = pass
-    newUserResponse.isYesResponse = false
-    console.log(newUserResponse.firstName)
-    //window.location.href = "ideaQ.html"
+    var newUserResponse = new UserResponse(name, email, pass, major, schoolYear, false)
+    window.location.href = "pages/ideaQ.html"
+    handleUserTrackResponse()
  }
+
+// Next, on the ideaQ.html, we handle the user's choice
+function handleUserTrackResponse() {
+    // first case assumes yes 
+
+    // otherwise no
+    var noChoice = document.getElementById("no").onclick = noChoice()
+}
 
  // Now let's display the correct page depending on button response
  function yesChoice() {
@@ -75,10 +76,6 @@
      window.location.href = "no/preQ.html"
  }
 
- // tests
- console.log("INIT TESTS")
- console.log(newUserResponse.firstName)
- console.log(newUserResponse.isYesResponse)
 
 
 

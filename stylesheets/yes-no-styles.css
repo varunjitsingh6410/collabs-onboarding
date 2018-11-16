@@ -1,0 +1,26 @@
+/**
+* Note: this file will be repsonsible for styling the onboarding questions
+*/
+@font-face {
+    font-family: 'EquitanSans';
+    src: url('fonts/EquitanSans-SemiBold.otf');
+}
+
+/* default button styling */
+.nextQ {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid green;
+    background-color: lightgreen;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.question-header {
+    font-family: 'EquitanSans';
+    line-height: 400px;
+    height: 200px;
+    text-align: center;
+  }
+
