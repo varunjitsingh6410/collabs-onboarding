@@ -1,6 +1,7 @@
 /**
  * As of right now, we will use this file to "swap out"
  * questions instead of having so many duplicate, redundant html files
+ * This will serve as the main bank of onboarding questions
  */
 
  // below are our constants as strings
@@ -25,6 +26,7 @@
  const n_q7 = "Where do you see yourself in the future?"
 
  const ONBOARDING_QUESTIONS = {
-     yesQuestions: [],
-     noQuestions: []
+     yesQuestions: [y_q1, y_q2, y_q3, y_q4, y_q6, y_q7, y_q8, y_q9, y_q10, y_finish],
+     noQuestions: [n_q1, n_q2, n_q3, n_q4, n_q5, n_q6, n_q7]
  }
+

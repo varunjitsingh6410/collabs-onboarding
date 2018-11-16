@@ -8,6 +8,16 @@
 <body>
 	<h1 class="question-header">Awesome, we want to help you form your team. The next step is getting to know you and your idea.</h1>
 	<br>
-	<button class="nextQ"> Okay! </button>
+
+	<!-- this is set to hidden by default until user needs to input text -->
+	<div class="questions-wrapper">
+		<textarea class="question-response-input" id="yes-textarea-isHidden">
+
+		</textarea>
+		<br>
+		<button id="okayButton"> Okay! </button>
+		<!-- set to hidden by default: button arrow for all other questions -->
+		<button hidden id="nextArrow"></button>
+	</div>
 </body>
 </html>

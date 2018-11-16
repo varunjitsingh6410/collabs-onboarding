@@ -7,20 +7,43 @@
 }
 
 /* default button styling */
-.nextQ {
-    display: inline-block;
+#okayButton {
     padding: 10px;
     border: 1px solid green;
     background-color: lightgreen;
-    border-radius: 20px;
+    border-radius: 10px;
     text-decoration: none;
     color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: 200px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* onboarding questions */
+.questions-wrapper {
+    position: relative;
+}
+.question-response-input {
+    overflow: auto;
+    outline: none;
+    resize: none; /*remove the resize handle on the bottom right*/
+
+    border-radius: 8px;
+    border: 1px solid grey;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 80px;
+    visibility: hidden;
 }
 
 .question-header {
     font-family: 'EquitanSans';
-    line-height: 400px;
-    height: 200px;
     text-align: center;
   }
 
+/* Styles for finish.html */
