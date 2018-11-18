@@ -30,3 +30,30 @@
      noQuestions: [n_q1, n_q2, n_q3, n_q4, n_q5, n_q6, n_q7]
  }
 
+// other global vars
+var questionLabel = document.getElementById("question-label")
+const userChoice = window.location.href
+
+// we need to set a listener for the "Okay!" button, once that's clicked,
+// we have to swap the okay button with the arrow, and then change question label
+var okayButton = document.getElementById("okayButton")
+var arrowButton = document.getElementById("nextArrow")
+let textInput = document.getElementById("textarea-isHidden")
+
+
+okayButton.addEventListener('click', () => {
+    okayButton.style.display = "none"
+    arrowButton.style.display = "block"
+    textInput.style.display = "block"
+    console.log("Testing global var in user responses.js")
+    console.log(ALL_TEST_USERS)
+    // set next question, but before that, we need to know what user path is
+    if(userChoice.includes("yes")) {
+        questionLabel.innerHTML = ONBOARDING_QUESTIONS.yesQuestions[0]
+    } else {
+        questionLabel.innerHTML = ONBOARDING_QUESTIONS.noQuestions[0]
+    }
+})
+arrowButton.addEventListener('click', () => {
+
+})

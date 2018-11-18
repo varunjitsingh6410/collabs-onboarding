@@ -6,18 +6,20 @@
 	<link rel="stylesheet" href="../../stylesheets/yes-no-styles.css">
 </head>
 <body>
-	<h1 class="question-header">Awesome, we want to help you form your team. The next step is getting to know you and your idea.</h1>
+	<h1 class="question-header" id="question-label">Awesome, we want to help you form your team. The next step is getting to know you and your idea.</h1>
 	<br>
 
 	<!-- this is set to hidden by default until user needs to input text -->
 	<div class="questions-wrapper">
-		<textarea class="question-response-input" id="yes-textarea-isHidden">
+		<textarea class="question-response-input" id="textarea-isHidden">
 
 		</textarea>
 		<br>
 		<button id="okayButton"> Okay! </button>
 		<!-- set to hidden by default: button arrow for all other questions -->
-		<button hidden id="nextArrow"></button>
+		<button id="nextArrow">next</button>
 	</div>
+	<script src="../../javascript/userResponses.js"></script>
+	<script src="../../javascript/pactOnboarding.js"></script>
 </body>
 </html>
