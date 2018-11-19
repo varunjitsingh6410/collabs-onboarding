@@ -10,36 +10,44 @@
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
+    <script>
+        $(document).ready(function(){
+        /*! Fades in page on load */
+        $('body').css('display', 'none');
+        $('body').fadeIn(1000);
+        });
+    </script>
     <div class="signInContainer" style="width:500px; margin:0 auto;">
         <h1>Join the Community of<br style="line-height: 40%;"> College Inventors</h1>
         <form>
         <div class="input-container">
-            <i class="fa fa-user icon"></i>
+            <i class="fa fa-user icon"><img src="assets/signIn/name.png" width="30px" height="30px"></i>
             <input class="input-field" type="text" placeholder="Name" name="username" id="name">
         </div>
         
         <div class="input-container">
-            <i class="fa fa-envelope icon"></i>
+            <i class="fa fa-envelope icon"><img src="assets/signIn/email.png" width="30px" height="30px"></i>
             <input class="input-field" type="text" placeholder="UCSD Email" name="email" id="email">
         </div>
         
         <div class="input-container">
-            <i class="fa fa-key icon"></i>
+            <i class="fa fa-key icon"><img src="assets/signIn/pass.png" width="30px" height="30px"></i>
             <input class="input-field" type="password" placeholder="Password" name="pass" id="password">
         </div>
 
         <div class="input-container">
-            <i class="fa fa-key icon"></i>
+            <i class="fa fa-key icon"><img src="assets/signIn/major.png" width="30px" height="30px"></i>
             <input class="input-field" type="text" placeholder="Major" name="major" id="major">
         </div>
 
         <div class="input-container">
-            <i class="fa fa-key icon"></i>
+            <i class="fa fa-key icon"><img src="assets/signIn/year.png" width="30px" height="30px"></i>
             <input class="input-field" type="text" placeholder="Year in school" name="standing" id="schoolYear">
         </div>
         <a class="sign-up-button" onclick="signInUser()" href="ideaQ.html" >Sign Up</a>
         </form>
     </div>
     <script type="text/javascript" src="javascript/userResponses.js"></script>
+    
 </body>
 </html>

@@ -11,8 +11,15 @@
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
+	<script>
+		$(document).ready(function() { 
+			$('.heading, .images').each(function(fadeInDiv) {
+				$(this).delay(fadeInDiv * 500).fadeIn(1000);
+			});
+		});
+	</script>
 	<div class="heading">
-		<h1 class="heading">First off, how do you want to change the world?</h1>
+		<h1 class="heading">How do you plan to change the world?</h1>
 		<div id="images">
 			<a href="pages/yes/yes-preQ.html" id="yes">
 				<img class="selectImg" id="yes" src="assets/idea.png"/>
