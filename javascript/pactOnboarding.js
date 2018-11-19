@@ -15,7 +15,7 @@
  const y_q8 = "Okay let us get to know you better. What are your passions?"
  const y_q9 = "What have you taught yourself this year?"
  const y_q10 = "What makes you awesome?"
- const y_finish = "We will get you paired up with a team shortly. Stay tuned via email or through the Teambuild tool."
+ const finish = "We will get you paired up with a team shortly. Stay tuned via email or through the Teambuild tool."
 
  const n_q1 = "What have you taught yourself this year?"
  const n_q2 = "What makes you awesome?"
@@ -26,8 +26,8 @@
  const n_q7 = "Where do you see yourself in the future?"
 
  const ONBOARDING_QUESTIONS = {
-     yesQuestions: [y_q1, y_q2, y_q3, y_q4, y_q5, y_q6, y_q7, y_q8, y_q9, y_q10, y_finish],
-     noQuestions: [n_q1, n_q2, n_q3, n_q4, n_q5, n_q6, n_q7]
+     yesQuestions: [y_q1, y_q2, y_q3, y_q4, y_q6, y_q7, y_q8, y_q9, y_q10, finish],
+     noQuestions: [n_q1, n_q2, n_q3, n_q4, n_q5, n_q6, n_q7, finish]
  }
 
 // other global vars
@@ -47,9 +47,13 @@ okayButton.addEventListener('click', () => {
     textInput.style.display = "block"
     // set next question, but before that, we need to know what user path is
     if(userChoice.includes("yes")) {
-        questionLabel.innerHTML = ONBOARDING_QUESTIONS.yesQuestions[0]
+        // if array len is empty we don't want 'undef' to show up on screen
+        if (ONBOARDING_QUESTIONS.yesQuestions.length == 0) {
+           window.location.href = "../finish.html"
+        }
+        questionLabel.innerHTML = ONBOARDING_QUESTIONS.yesQuestions.shift()
     } else {
-        questionLabel.innerHTML = ONBOARDING_QUESTIONS.noQuestions[0]
+        questionLabel.innerHTML = ONBOARDING_QUESTIONS.noQuestions.shift()
     }
 })
 arrowButton.addEventListener('click', () => {
@@ -58,13 +62,8 @@ arrowButton.addEventListener('click', () => {
 
     // yes this is a bit redundant, but it'll do for now
     if(userChoice.includes("yes")) {
-        questionLabel.innerHTML = ONBOARDING_QUESTIONS.yesQuestions[1]
-        arrowButton.onclick = () => {
-            for(var i = 0; i < ONBOARDING_QUESTIONS.yesQuestions.length - 2; i++) {
-                questionLabel.innerHTML = ONBOARDING_QUESTIONS.yesQuestions[i]
-            }
-        }
+        questionLabel.innerHTML = ONBOARDING_QUESTIONS.yesQuestions.shift()
     } else {
-        questionLabel.innerHTML = ONBOARDING_QUESTIONS.noQuestions[1]
+        questionLabel.innerHTML = ONBOARDING_QUESTIONS.noQuestions.shift()
     }
 })
